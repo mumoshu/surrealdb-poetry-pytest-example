@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "surrealdb-poetry-pytest-example"
+version = "0.1.0"
+description = "Example project using SurrealDB with Python, Poetry, and Pytest"
+authors = ["Yusuke Kuoka <ykuoka@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+surrealdb = "^1.0.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+ruff = "^0.1.0"
+pytest-asyncio = "^0.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "W", "F", "I", "UP", "N", "B", "A", "C4", "T20", "SIM", "PTH", "ISC"]
+ignore = ["E501"] # Let black handle line length
+
+[tool.ruff.isort]
+known-first-party = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
