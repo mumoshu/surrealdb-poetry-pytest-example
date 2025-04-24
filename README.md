@@ -1,6 +1,9 @@
 # SurrealDB Python Example with Dev Containers
 
-This project provides a starting point for developing Python applications using the SurrealDB Python SDK within a VS Code Dev Container environment.
+This project provides a starting point for developing Python applications using the SurrealDB Python SDK, poetry, and pytest within a VS Code Dev Container environment.
+
+I personally built this because [surrealdb.py](https://github.com/surrealdb/surrealdb.py) uses Python `unittest` for testing and I wanted
+a go-to example for myself when starting a SurrealDB project using Python and `pytest` :)
 
 ## Features
 
@@ -18,8 +21,8 @@ This project provides a starting point for developing Python applications using 
     *   VS Code with the "Dev Containers" extension installed.
 2.  **Clone the repository:**
     ```bash
-    git clone <your-repo-url>
-    cd <your-repo-directory>
+    git clone git@github.com:mumoshu/surrealdb-poetry-pytest-example.git
+    cd surrealdb-poetry-pytest-example
     ```
 3.  **Open in Dev Container:**
     *   Open the project folder in VS Code.
@@ -30,7 +33,7 @@ This project provides a starting point for developing Python applications using 
 5.  **Start Developing:**
     *   The SurrealDB instance will be available at `ws://surrealdb:8000` from within the `app` container.
     *   The default credentials (set in `docker-compose.yml`) are user `root` and password `root`.
-    *   You can open a terminal in VS Code (Terminal > New Terminal) to run commands inside the container (e.g., `poetry run python your_script.py`, `poetry run pytest`).
+    *   You can open a terminal in VS Code (Terminal > New Terminal) to run commands inside the container.
 
 ## Connecting to SurrealDB
 
@@ -48,6 +51,14 @@ Script:
 
 ```shell
 poetry run python main.py
+```
+
+## Running tests
+
+Inside the `app` container, you can run pytest to run the tests for various SurrealDB Python SDK features against the `surrealdb` container.
+
+```shell
+poetry run pytest
 ```
 
 ## Customization
